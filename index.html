@@ -1,207 +1,296 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fisioterapia Costa del Sol</title>
-<meta name="description" content="Clínica de fisioterapia en Málaga: tratamientos, convenios y atención especializada en accidentes de tráfico.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fisioterapia Costa del Sol</title>
+  <meta name="description" content="Clínica de fisioterapia en Málaga con atención personalizada, rehabilitación y soluciones para accidentes de tráfico.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eefaf6',
+              100: '#d9f4eb',
+              600: '#1f6f64',
+              700: '#175a50',
+              800: '#123f39'
+            },
+            accent: {
+              500: '#e08e3e',
+              600: '#cf7a26'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            display: ['Sora', 'system-ui', 'sans-serif']
+          },
+          boxShadow: {
+            soft: '0 20px 45px rgba(17, 24, 39, 0.08)'
+          }
+        }
+      }
+    };
+  </script>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body class="bg-slate-50 text-slate-800 antialiased">
 
-<!-- ===================== NAVBAR ===================== -->
-<header class="nav">
-  <div class="nav__inner">
-    <a href="#inicio" class="nav__brand">
-      <!-- CONTENIDO PENDIENTE: sustituir por <img src="..." alt="Fisioterapia Costa del Sol" class="nav__logo"> -->
-      <span class="nav__logo-placeholder" aria-hidden="true">Logo</span>
-      Fisioterapia <span>Costa del Sol</span>
-    </a>
+  <header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/85 backdrop-blur-md relative">
+    <div class="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8">
+      <a href="#inicio" class="flex items-center gap-3 text-slate-900 no-underline">
+        <img src="img/logo_cuadrado.png" alt="Logo Fisioterapia Costa del Sol" class="h-10 w-10 rounded-xl object-cover ring-1 ring-slate-200 bg-white shadow-sm">
+        <span class="text-sm font-semibold sm:text-base">
+          Fisioterapia <span class="text-brand-600">Costa del Sol</span>
+        </span>
+      </a>
 
-    <nav class="nav__links" id="nav-links">
-      <a href="#instalaciones">Instalaciones</a>
-      <a href="#tratamientos">Tratamientos</a>
-      <a href="#convenios">Convenios</a>
-      <a href="#accidentes">Accidentes de tráfico</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
+      <nav id="nav-links" class="nav-links">
+        <a href="#instalaciones" class="nav-links__item">Instalaciones</a>
+        <a href="#tratamientos" class="nav-links__item">Tratamientos</a>
+        <a href="#convenios" class="nav-links__item">Convenios</a>
+        <a href="#accidentes" class="nav-links__item">Accidentes</a>
+        <a href="#contacto" class="nav-links__item">Contacto</a>
+      </nav>
 
-    <div class="nav__actions">
-      <button id="nav-toggle" class="icon-btn nav__burger" aria-label="Abrir menú" aria-expanded="false">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
-      </button>
-    </div>
-  </div>
-</header>
-
-<!-- Botón de tema flotante, fuera del navbar para no saturarlo en móvil -->
-<button id="theme-toggle" class="icon-btn theme-toggle-float" aria-label="Cambiar a modo oscuro" title="Cambiar tema">
-  <svg class="icon icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
-  <svg class="icon icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5Z"/></svg>
-</button>
-
-<main>
-
-  <!-- ===================== HERO ===================== -->
-  <section id="inicio" class="hero">
-    <div class="hero__text">
-      <h1>Recupera el movimiento, sin prisa pero sin pausa.</h1>
-      <!-- CONTENIDO PENDIENTE: sustituir por el párrafo de presentación real de la clínica -->
-      <p class="hero__lead">Atención fisioterapéutica personalizada en Málaga, con más de una década tratando a pacientes de todas las edades.</p>
-      <div class="hero__cta">
-        <a href="#contacto" class="btn btn--primary">Pedir cita</a>
-        <a href="#tratamientos" class="btn btn--ghost">Ver tratamientos</a>
+      <div class="md:hidden">
+        <button id="nav-toggle" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-sm transition hover:border-brand-600 hover:text-brand-700" aria-label="Abrir menú" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-5 w-5">
+            <path d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
       </div>
     </div>
-    <div class="hero__media">
-      <!-- CONTENIDO PENDIENTE: sustituir por <img> real de la clínica -->
-      <div class="media-placeholder" aria-hidden="true">Imagen de la clínica</div>
-    </div>
-  </section>
+  </header>
 
-  <!-- ===================== INSTALACIONES ===================== -->
-  <section id="instalaciones" class="section">
-    <div class="section__head">
-      <h2>Instalaciones</h2>
-      <p><!-- CONTENIDO PENDIENTE: introducción breve a las instalaciones --></p>
-    </div>
-    <div class="gallery">
-      <!-- CONTENIDO PENDIENTE: sustituir cada media-placeholder por la foto real -->
-      <figure class="gallery__item gallery__item--wide">
-        <div class="media-placeholder" aria-hidden="true">Foto general de la clínica</div>
-        <figcaption>La clínica</figcaption>
-      </figure>
-      <figure class="gallery__item">
-        <div class="media-placeholder" aria-hidden="true">Foto sala 1</div>
-        <figcaption>Nombre de la sala</figcaption>
-      </figure>
-      <figure class="gallery__item">
-        <div class="media-placeholder" aria-hidden="true">Foto sala 2</div>
-        <figcaption>Nombre de la sala</figcaption>
-      </figure>
-      <figure class="gallery__item gallery__item--wide">
-        <div class="media-placeholder" aria-hidden="true">Foto general de la clínica</div>
-        <figcaption>Zona de espera / recepción</figcaption>
-      </figure>
-    </div>
-  </section>
+  <button id="theme-toggle" class="theme-toggle-float inline-flex h-12 w-12 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-soft transition hover:border-brand-600 hover:text-brand-700" aria-label="Cambiar a modo oscuro" title="Cambiar tema">
+    <svg class="icon icon--sun h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <circle cx="12" cy="12" r="4"/>
+      <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>
+    </svg>
+    <svg class="icon icon--moon hidden h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5Z"/>
+    </svg>
+  </button>
 
-  <!-- ===================== TRATAMIENTOS ===================== -->
-  <section id="tratamientos" class="section section--alt">
-    <div class="section__head">
-      <h2>Tratamientos</h2>
-      <p><!-- CONTENIDO PENDIENTE: introducción breve --></p>
-    </div>
-    <div class="cards">
-      <!-- CONTENIDO PENDIENTE: repetir por cada tratamiento -->
-      <article class="card">
-        <h3>Nombre del tratamiento</h3>
-        <p>Descripción breve del tratamiento y a quién va dirigido.</p>
-      </article>
-      <article class="card">
-        <h3>Nombre del tratamiento</h3>
-        <p>Descripción breve del tratamiento y a quién va dirigido.</p>
-      </article>
-      <article class="card">
-        <h3>Nombre del tratamiento</h3>
-        <p>Descripción breve del tratamiento y a quién va dirigido.</p>
-      </article>
-    </div>
-  </section>
-
-  <!-- ===================== CONVENIOS ===================== -->
-  <section id="convenios" class="section">
-    <div class="section__head">
-      <h2>Convenios</h2>
-      <p><!-- CONTENIDO PENDIENTE: introducción breve --></p>
-    </div>
-    <ul class="logo-list">
-      <!-- CONTENIDO PENDIENTE: repetir por cada mutua/aseguradora -->
-      <li>Nombre del convenio</li>
-      <li>Nombre del convenio</li>
-      <li>Nombre del convenio</li>
-    </ul>
-  </section>
-
-  <!-- ===================== ACCIDENTES DE TRÁFICO ===================== -->
-  <section id="accidentes" class="section section--alt">
-    <div class="section__head">
-      <h2>Accidentes de tráfico</h2>
-      <p><!-- CONTENIDO PENDIENTE: texto sobre tratamiento de lesiones por accidente, gestión con aseguradoras, etc. --></p>
-    </div>
-  </section>
-
-  <!-- ===================== CONTACTO ===================== -->
-  <section id="contacto" class="section">
-    <div class="section__head">
-      <h2>Contacto</h2>
-    </div>
-    <div class="contact">
-      <div class="contact__info">
-        <a class="contact__row" href="tel:+34952446655">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.4 2.1L8.1 9.7a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.4c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2.2Z"/></svg>
-          <span>952 44 66 55</span>
-        </a>
-        <a class="contact__row" href="mailto:fisioterapiacostadelsol@hotmail.com?subject=Consulta%20Web&body=">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="m22 6-10 7L2 6"/></svg>
-          <span>fisioterapiacostadelsol@hotmail.com</span>
-        </a>
-        <div class="contact__row">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-          <span>Avd. Salvador Vicente, Conjunto Parquemiel, 6, Arroyo de la Miel, Benalmádena — 29631 Málaga</span>
+  <main>
+    <section id="inicio" class="mx-auto max-w-6xl px-4 pb-12 pt-8 sm:px-6 lg:px-8 lg:pb-20 lg:pt-16">
+      <div class="grid gap-8 md:grid-cols-2 md:items-center">
+        <div>
+          <p class="mb-4 inline-flex rounded-full border border-brand-100 bg-brand-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-brand-700">Clínica de fisioterapia</p>
+          <h1 class="font-display text-4xl font-bold leading-tight text-slate-900 sm:text-5xl">Recupera el movimiento, sin prisa pero sin pausa.</h1>
+          <p class="mt-5 max-w-xl text-base leading-7 text-slate-600 sm:text-lg">
+            Atención fisioterapéutica personalizada en Málaga, con más de una década cuidando la recuperación de pacientes de todas las edades.
+          </p>
+          <div class="mt-7 flex flex-col gap-3 sm:flex-row">
+            <a href="#contacto" class="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-accent-500 to-amber-400 px-6 py-3 text-sm font-semibold text-slate-900 shadow-[0_12px_30px_rgba(224,142,62,0.35)] no-underline transition duration-200 hover:translate-y-[-1px] hover:shadow-[0_16px_34px_rgba(224,142,62,0.42)]">Pedir cita</a>
+            <a href="#tratamientos" class="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-700 no-underline shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-brand-600 hover:text-brand-700">Ver tratamientos</a>
+          </div>
         </div>
-        <div class="contact__row contact__row--schedule">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-          <span>
-            Lunes a viernes<br>
-            <strong>9:30 – 13:30</strong> y <strong>16:00 – 20:00</strong><br>
-            Sábados y domingos cerrado
-          </span>
+
+        <div class="rounded-[28px] border border-slate-200 bg-white p-5 shadow-soft sm:p-6">
+          <div class="flex h-full min-h-[290px] flex-col justify-between rounded-[22px] bg-gradient-to-br from-brand-50 via-white to-slate-100 p-5 text-slate-900">
+            <div class="flex items-center justify-between">
+              <span class="rounded-full bg-white px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-brand-700 ring-1 ring-slate-200">Málaga</span>
+              <span class="rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700">Atención cercana</span>
+            </div>
+
+            <div class="mt-8 space-y-4">
+              <div class="rounded-2xl bg-white/90 p-4 ring-1 ring-slate-200">
+                <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Especialidades</p>
+                <p class="mt-2 text-xl font-semibold text-slate-900">Fisioterapia deportiva, traumatología y rehabilitación</p>
+              </div>
+
+              <div class="grid grid-cols-2 gap-3">
+                <div class="rounded-2xl bg-white p-4 ring-1 ring-slate-200">
+                  <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Pacientes</p>
+                  <p class="mt-2 text-2xl font-bold text-brand-700">+10 años</p>
+                </div>
+                <div class="rounded-2xl bg-white p-4 ring-1 ring-slate-200">
+                  <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Horario</p>
+                  <p class="mt-2 text-lg font-bold text-brand-700">L-V 9:30-20:00</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="contact__map">
-        <iframe
-          title="Ubicación de la clínica en el mapa"
-          src="https://www.google.com/maps?q=Avd.+Salvador+Vicente,+Conjunto+Parquemiel,+6,+Arroyo+de+la+Miel,+Benalm%C3%A1dena,+29631+M%C3%A1laga&output=embed"
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
+    </section>
+
+    <section id="instalaciones" class="border-y border-slate-200 bg-white/70">
+      <div class="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8 lg:py-20">
+        <div class="mb-8 max-w-2xl">
+          <p class="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-brand-700">Instalaciones</p>
+          <h2 class="font-display text-3xl font-bold text-slate-900 sm:text-4xl">Un espacio pensado para tu recuperación.</h2>
+          <p class="mt-4 text-base leading-7 text-slate-600">Nuestra clínica combina tecnología, comodidad y trato cercano para que cada sesión se desarrolle en un entorno seguro y eficaz.</p>
+        </div>
+
+        <div class="grid gap-4 md:grid-cols-2">
+          <figure class="overflow-hidden rounded-[24px] border border-slate-200 bg-slate-100 md:col-span-2">
+            <div class="flex min-h-[220px] items-center justify-center bg-gradient-to-br from-slate-200 to-slate-100 text-sm font-medium uppercase tracking-[0.2em] text-slate-500">Foto general de la clínica</div>
+            <figcaption class="bg-white px-4 py-3 text-sm text-slate-600">La clínica</figcaption>
+          </figure>
+          <figure class="overflow-hidden rounded-[24px] border border-slate-200 bg-slate-100">
+            <div class="flex min-h-[220px] items-center justify-center bg-gradient-to-br from-brand-50 to-slate-100 text-sm font-medium uppercase tracking-[0.2em] text-slate-500">Foto sala 1</div>
+            <figcaption class="bg-white px-4 py-3 text-sm text-slate-600">Sala de tratamiento</figcaption>
+          </figure>
+          <figure class="overflow-hidden rounded-[24px] border border-slate-200 bg-slate-100">
+            <div class="flex min-h-[220px] items-center justify-center bg-gradient-to-br from-slate-200 to-brand-50 text-sm font-medium uppercase tracking-[0.2em] text-slate-500">Foto sala 2</div>
+            <figcaption class="bg-white px-4 py-3 text-sm text-slate-600">Zona de rehabilitación</figcaption>
+          </figure>
+          <figure class="overflow-hidden rounded-[24px] border border-slate-200 bg-slate-100 md:col-span-2">
+            <div class="flex min-h-[200px] items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200 text-sm font-medium uppercase tracking-[0.2em] text-slate-500">Zona de espera / recepción</div>
+            <figcaption class="bg-white px-4 py-3 text-sm text-slate-600">Recepción y espera</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="tratamientos" class="bg-slate-50">
+      <div class="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8 lg:py-20">
+        <div class="mb-8 max-w-2xl">
+          <p class="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-brand-700">Tratamientos</p>
+          <h2 class="font-display text-3xl font-bold text-slate-900 sm:text-4xl">Recuperación integral, adaptada a cada persona.</h2>
+          <p class="mt-4 text-base leading-7 text-slate-600">Abordamos la rehabilitación desde una perspectiva individual, con protocolos claros y acompañamiento continuo durante cada fase del tratamiento.</p>
+        </div>
+
+        <div class="grid gap-4 md:grid-cols-3">
+          <article class="rounded-[24px] border border-slate-200 bg-white p-6 shadow-sm">
+            <div class="mb-4 inline-flex rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-brand-700">Física</div>
+            <h3 class="font-display text-xl font-bold text-slate-900">Fisioterapia general</h3>
+            <p class="mt-3 text-sm leading-6 text-slate-600">Tratamiento de dolor, movilidad y fortalecimiento para devolver la calidad de vida a pacientes con lesiones o limitaciones funcionales.</p>
+          </article>
+
+          <article class="rounded-[24px] border border-slate-200 bg-white p-6 shadow-sm">
+            <div class="mb-4 inline-flex rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-brand-700">Deportiva</div>
+            <h3 class="font-display text-xl font-bold text-slate-900">Rehabilitación deportiva</h3>
+            <p class="mt-3 text-sm leading-6 text-slate-600">Plan de recuperación para lesiones en deporte y entrenamiento, con enfoque en retorno seguro y control progresivo de la actividad.</p>
+          </article>
+
+          <article class="rounded-[24px] border border-slate-200 bg-white p-6 shadow-sm">
+            <div class="mb-4 inline-flex rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-brand-700">Trauma</div>
+            <h3 class="font-display text-xl font-bold text-slate-900">Lesiones y traumatismos</h3>
+            <p class="mt-3 text-sm leading-6 text-slate-600">Atención para esguinces, contracturas, golpes, fracturas y secuelas postraumáticas, con seguimiento y prevención del dolor.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="convenios" class="bg-white">
+      <div class="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8 lg:py-20">
+        <div class="mb-8 max-w-2xl">
+          <p class="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-brand-700">Convenios</p>
+          <h2 class="font-display text-3xl font-bold text-slate-900 sm:text-4xl">Trabajamos con entidades y aseguradoras.</h2>
+          <p class="mt-4 text-base leading-7 text-slate-600">Asesoramos sobre la vía de atención más adecuada y facilitamos la tramitación para que puedas iniciar tu tratamiento con la máxima comodidad.</p>
+        </div>
+
+        <ul class="flex flex-wrap gap-3">
+          <li class="rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-medium text-slate-600">Mutua de trabajo</li>
+          <li class="rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-medium text-slate-600">Seguros de salud</li>
+          <li class="rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-medium text-slate-600">Accidentes de tráfico</li>
+          <li class="rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-medium text-slate-600">Convenios empresariales</li>
+          <li class="rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-medium text-slate-600">Aseguradoras</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="accidentes" class="bg-slate-100">
+      <div class="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8 lg:py-20">
+        <div class="grid gap-6 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+          <div>
+            <p class="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-brand-700">Accidentes de tráfico</p>
+            <h2 class="font-display text-3xl font-bold text-slate-900 sm:text-4xl">Tu recuperación después de un accidente, con ayuda y seguimiento.</h2>
+            <p class="mt-4 text-base leading-7 text-slate-600">Si has sufrido un accidente de tráfico, tratamos las secuelas físicas de forma individualizada y coordinamos la documentación necesaria para facilitar la gestión con aseguradoras y profesionales implicados.</p>
+          </div>
+
+          <div class="rounded-[24px] border border-slate-200 bg-white p-6 shadow-sm">
+            <h3 class="font-display text-xl font-bold text-slate-900">Qué incluimos</h3>
+            <ul class="mt-4 space-y-3 text-sm leading-6 text-slate-600">
+              <li>• Evaluación inicial y diagnóstico funcional.</li>
+              <li>• Plan de tratamiento personalizado.</li>
+              <li>• Seguimiento de evolución y objetivos.</li>
+              <li>• Acompañamiento en la gestión del proceso.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="bg-white">
+      <div class="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8 lg:py-20">
+        <div class="mb-8 max-w-2xl">
+          <p class="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-brand-700">Contacto</p>
+          <h2 class="font-display text-3xl font-bold text-slate-900 sm:text-4xl">Pide tu cita y empieza a sentirte mejor.</h2>
+        </div>
+
+        <div class="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+          <div class="space-y-4 rounded-[24px] border border-slate-200 bg-slate-50 p-5 sm:p-6">
+            <a class="flex items-start gap-3 text-slate-800 no-underline" href="tel:+34952446655">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mt-1 h-5 w-5 shrink-0 text-brand-700"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.4 2.1L8.1 9.7a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.4c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2.2Z"/></svg>
+              <span class="text-sm sm:text-base">952 44 66 55</span>
+            </a>
+
+            <a class="flex items-start gap-3 text-slate-800 no-underline" href="mailto:fisioterapiacostadelsol@hotmail.com?subject=Consulta%20Web&body=">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mt-1 h-5 w-5 shrink-0 text-brand-700"><path d="M4 4h16v16H4z"/><path d="m22 6-10 7L2 6"/></svg>
+              <span class="text-sm sm:text-base">fisioterapiacostadelsol@hotmail.com</span>
+            </a>
+
+            <div class="flex items-start gap-3 text-slate-800">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mt-1 h-5 w-5 shrink-0 text-brand-700"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span class="text-sm leading-6 sm:text-base">Avd. Salvador Vicente, Conjunto Parquemiel, 6, Arroyo de la Miel, Benalmádena — 29631 Málaga</span>
+            </div>
+
+            <div class="flex items-start gap-3 text-slate-800">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mt-1 h-5 w-5 shrink-0 text-brand-700"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+              <span class="text-sm leading-6 sm:text-base">Lunes a viernes<br><strong>9:30 – 13:30</strong> y <strong>16:00 – 20:00</strong><br>Sábados y domingos cerrado</span>
+            </div>
+          </div>
+
+          <div class="overflow-hidden rounded-[24px] border border-slate-200 bg-slate-100 shadow-sm">
+            <iframe
+              title="Ubicación de la clínica en el mapa"
+              src="https://www.google.com/maps?q=Avd.+Salvador+Vicente,+Conjunto+Parquemiel,+6,+Arroyo+de+la+Miel,+Benalm%C3%A1dena,+29631+M%C3%A1laga&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              class="h-[300px] w-full border-0 sm:h-[360px]">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-slate-200 bg-slate-100">
+    <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-4 py-6 text-sm text-slate-600 sm:flex-row sm:px-6 lg:px-8">
+      <p class="m-0">&copy; 1995–<span id="year"></span> Fisioterapia Costa del Sol</p>
+      <button type="button" class="border-0 bg-transparent p-0 font-medium text-slate-600 underline decoration-slate-400 underline-offset-4 transition hover:text-slate-900" id="open-legal">Aviso legal</button>
+    </div>
+  </footer>
+
+  <div class="modal" id="legal-modal" hidden>
+    <div class="modal__backdrop" data-close-modal></div>
+    <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="legal-title">
+      <button type="button" class="modal__close" data-close-modal aria-label="Cerrar">&times;</button>
+      <h2 id="legal-title" class="font-display text-2xl font-bold text-slate-900">Aviso legal</h2>
+      <div class="modal__body mt-4 text-sm leading-7 text-slate-600">
+        <p>Fisioterapia Costa del Sol informa que la información contenida en esta web tiene carácter general y no sustituye el criterio profesional. Los contenidos están protegidos por derechos de propiedad intelectual y se emplean únicamente con fines informativos.</p>
+        <p>La clínica no se responsabiliza de los usos indebidos del sitio o de la información proporcionada por terceros. En caso de dudas sobre su tratamiento o condiciones de atención, se recomienda consultar directamente con el profesional responsable.</p>
       </div>
     </div>
-  </section>
-
-</main>
-
-<!-- ===================== FOOTER ===================== -->
-<footer class="footer">
-  <div class="footer__inner">
-    <p>&copy; 1995–<span id="year"></span> Fisioterapia Costa del Sol</p>
-    <button type="button" class="footer__link" id="open-legal">Aviso legal</button>
   </div>
-</footer>
 
-<!-- ===================== AVISO LEGAL (modal) ===================== -->
-<div class="modal" id="legal-modal" hidden>
-  <div class="modal__backdrop" data-close-modal></div>
-  <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="legal-title">
-    <button type="button" class="modal__close" data-close-modal aria-label="Cerrar">&times;</button>
-    <h2 id="legal-title">Aviso legal</h2>
-    <div class="modal__body">
-      <!-- CONTENIDO PENDIENTE: sustituir por el texto legal real (identificación del titular, condiciones de uso, propiedad intelectual, etc.) -->
-      <p>Texto del aviso legal pendiente de incorporar.</p>
-    </div>
+  <div class="cookie-banner" id="cookie-banner" hidden>
+    <p class="m-0 flex-1 text-sm leading-6 text-slate-600">Esta web no utiliza cookies propias ni de terceros con fines de análisis o publicidad. Solo guardamos la preferencia de cierre de este aviso.</p>
+    <button type="button" id="cookie-accept" class="inline-flex items-center justify-center rounded-full bg-brand-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-brand-700">Entendido</button>
   </div>
-</div>
 
-<!-- ===================== AVISO DE COOKIES ===================== -->
-<div class="cookie-banner" id="cookie-banner" hidden>
-  <p>Esta web no utiliza cookies propias ni de terceros con fines de análisis o publicidad. Solo guardamos localmente tu preferencia de haber cerrado este aviso, sin usar cookies.</p>
-  <button type="button" id="cookie-accept" class="btn btn--primary btn--sm">Entendido</button>
-</div>
-
-<script src="js/script.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
+
