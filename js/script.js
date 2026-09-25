@@ -102,24 +102,50 @@
      ----------------------------------------------------- */
   const cookieBanner = document.getElementById("cookie-banner");
   const cookieAccept = document.getElementById("cookie-accept");
+  const openCookies = document.getElementById("open-cookies");
   const COOKIE_KEY = "fcds_aviso_cerrado";
+
+  function showCookieBanner() {
+    if (!cookieBanner) return;
+    cookieBanner.hidden = false;
+    document.body.style.overflow = "hidden";
+  }
+
+  function hideCookieBanner() {
+    if (!cookieBanner) return;
+    cookieBanner.hidden = true;
+    document.body.style.overflow = "";
+  }
 
   if (cookieBanner && cookieAccept) {
     try {
       if (!localStorage.getItem(COOKIE_KEY)) {
         cookieBanner.hidden = false;
+      } else {
+        cookieBanner.hidden = true;
       }
     } catch (err) {
       cookieBanner.hidden = false;
     }
 
     cookieAccept.addEventListener("click", () => {
-      cookieBanner.hidden = true;
+      hideCookieBanner();
       try {
         localStorage.setItem(COOKIE_KEY, "1");
       } catch (err) {
         /* noop */
       }
+    });
+  }
+
+  if (openCookies) {
+    openCookies.addEventListener("click", () => {
+      try {
+        localStorage.removeItem(COOKIE_KEY);
+      } catch (err) {
+        /* noop */
+      }
+      showCookieBanner();
     });
   }
 
