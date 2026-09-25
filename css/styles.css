@@ -43,6 +43,11 @@ body {
   font-family: "Inter", system-ui, sans-serif;
   transition: background 0.2s ease, color 0.2s ease;
   overflow-x: hidden;
+  padding-top: 4.5rem;
+}
+
+main {
+  padding-top: 0;
 }
 
 img,
@@ -162,6 +167,25 @@ iframe {
   line-height: 1.6;
   color: var(--brand-dark);
   font-family: "Sora", system-ui, sans-serif;
+}
+
+.cta-neon {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent);
+  color: #fff;
+  border: 1px solid transparent;
+  box-shadow: none;
+  overflow: visible;
+  z-index: 0;
+}
+
+.cta-neon:hover {
+  background: var(--accent-strong, #d3792e);
+  transform: translateY(-1px);
+  box-shadow: none;
 }
 
 p {
