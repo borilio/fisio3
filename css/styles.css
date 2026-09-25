@@ -188,6 +188,18 @@ iframe {
   box-shadow: none;
 }
 
+.contact-info-item {
+  max-width: 100%;
+  min-width: 0;
+}
+
+.contact-copy {
+  display: block;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
 p {
   margin: 0;
 }
