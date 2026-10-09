@@ -2,6 +2,45 @@
   "use strict";
 
   /* -----------------------------------------------------
+     Datos de la clínica (js/config.js)
+     - data-config="campo"       → texto del elemento
+     - data-config-html="campo"  → HTML (listas: una línea por elemento)
+     - data-config-href="campo"  → enlace (tel y mailto se generan solos)
+     Si falta config.js o un campo, se mantiene lo escrito en el HTML.
+     ----------------------------------------------------- */
+  const config = window.SITE_CONFIG || {};
+
+  function getConfig(path) {
+    return path.split(".").reduce((obj, key) => (obj == null ? undefined : obj[key]), config);
+  }
+
+  const links = {};
+  if (config.telefono) {
+    const digits = config.telefono.replace(/[^\d+]/g, "");
+    links.tel = "tel:" + (digits.startsWith("+") ? digits : "+34" + digits);
+  }
+  if (config.email) {
+    links.mailto = "mailto:" + config.email +
+      (config.asuntoEmail ? "?subject=" + encodeURIComponent(config.asuntoEmail) : "");
+  }
+
+  document.querySelectorAll("[data-config]").forEach((el) => {
+    const value = getConfig(el.dataset.config);
+    if (value != null) el.textContent = value;
+  });
+
+  document.querySelectorAll("[data-config-html]").forEach((el) => {
+    const value = getConfig(el.dataset.configHtml);
+    if (value != null) el.innerHTML = Array.isArray(value) ? value.join("<br>") : value;
+  });
+
+  document.querySelectorAll("[data-config-href]").forEach((el) => {
+    const key = el.dataset.configHref;
+    const value = links[key] || getConfig(key);
+    if (value) el.href = value;
+  });
+
+  /* -----------------------------------------------------
      Modo oscuro / claro
      - El tema inicial ya lo aplica el script del <head> (evita parpadeo).
      - Sin elección manual, se sigue siempre la preferencia del sistema.
@@ -155,11 +194,11 @@
   const mapContainer = document.getElementById("map-container");
   const loadMap = document.getElementById("load-map");
 
-  if (mapContainer && loadMap) {
+  if (mapContainer && loadMap && getConfig("mapa.embed")) {
     loadMap.addEventListener("click", () => {
       const iframe = document.createElement("iframe");
       iframe.title = "Ubicación de la clínica en el mapa";
-      iframe.src = mapContainer.dataset.mapSrc;
+      iframe.src = getConfig("mapa.embed");
       iframe.referrerPolicy = "strict-origin-when-cross-origin";
       iframe.allowFullscreen = true;
       iframe.className = "h-[300px] w-full border-0 sm:h-[360px]";

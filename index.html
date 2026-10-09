@@ -256,39 +256,71 @@
           <p class="section-subtitle">Pide tu cita y empieza a sentirte mejor.</p>
         </div>
 
+        <!-- Botones de acción directa -->
+        <div class="mb-6 grid gap-3 sm:grid-cols-3">
+          <a class="contact-action contact-action--primary" href="tel:+34952446655" data-config-href="tel">
+            <span class="contact-action__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.4 2.1L8.1 9.7a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.4c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2.2Z"/></svg>
+            </span>
+            <span>
+              <span class="contact-action__title">Llamar</span>
+              <span class="contact-action__sub" data-config="telefono">952 44 66 55</span>
+            </span>
+          </a>
+
+          <a class="contact-action" href="https://www.google.com/maps/dir/?api=1&amp;destination=Fisioterapia+Costa+del+Sol,+Benalm%C3%A1dena" data-config-href="mapa.ruta" target="_blank" rel="noopener">
+            <span class="contact-action__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 11 19-9-9 19-2-8-8-2Z"/></svg>
+            </span>
+            <span>
+              <span class="contact-action__title">Cómo llegar</span>
+              <span class="contact-action__sub">Ruta en Google Maps</span>
+            </span>
+          </a>
+
+          <a class="contact-action" href="mailto:fisioterapiacostadelsol@hotmail.com?subject=Consulta%20Web" data-config-href="mailto">
+            <span class="contact-action__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="m22 6-10 7L2 6"/></svg>
+            </span>
+            <span>
+              <span class="contact-action__title">Enviar email</span>
+              <span class="contact-action__sub">Escríbenos tu consulta</span>
+            </span>
+          </a>
+        </div>
+
         <div class="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
           <div class="space-y-4 rounded-[24px] border border-slate-200 bg-slate-50 p-5 sm:p-6">
-            <a class="contact-info-item flex items-start gap-3 text-slate-800 no-underline" href="tel:+34952446655">
+            <a class="contact-info-item flex items-start gap-3 text-slate-800 no-underline" href="tel:+34952446655" data-config-href="tel">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mt-1 h-5 w-5 shrink-0 text-brand-700"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.4 2.1L8.1 9.7a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.4c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2.2Z"/></svg>
-              <span class="contact-copy text-sm sm:text-base">952 44 66 55</span>
+              <span class="contact-copy text-sm sm:text-base" data-config="telefono">952 44 66 55</span>
             </a>
 
-            <a class="contact-info-item flex items-start gap-3 text-slate-800 no-underline" href="mailto:fisioterapiacostadelsol@hotmail.com?subject=Consulta%20Web&body=">
+            <a class="contact-info-item flex items-start gap-3 text-slate-800 no-underline" href="mailto:fisioterapiacostadelsol@hotmail.com?subject=Consulta%20Web" data-config-href="mailto">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mt-1 h-5 w-5 shrink-0 text-brand-700"><path d="M4 4h16v16H4z"/><path d="m22 6-10 7L2 6"/></svg>
-              <span class="contact-copy text-sm sm:text-base">fisioterapiacostadelsol@hotmail.com</span>
+              <span class="contact-copy text-sm sm:text-base" data-config="email">fisioterapiacostadelsol@hotmail.com</span>
             </a>
 
             <div class="contact-info-item flex items-start gap-3 text-slate-800">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mt-1 h-5 w-5 shrink-0 text-brand-700"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-              <span class="contact-copy text-sm leading-6 sm:text-base">Avd. Salvador Vicente, Conjunto Parquemiel, 6, Arroyo de la Miel, Benalmádena — 29631 Málaga</span>
+              <span class="contact-copy text-sm leading-6 sm:text-base" data-config="direccion">Avd. Salvador Vicente, Conjunto Parquemiel, 6, Arroyo de la Miel, Benalmádena — 29631 Málaga</span>
             </div>
 
             <div class="contact-info-item flex items-start gap-3 text-slate-800">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mt-1 h-5 w-5 shrink-0 text-brand-700"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-              <span class="contact-copy text-sm leading-6 sm:text-base">Lunes a viernes<br><strong>9:30 – 13:30</strong> y <strong>16:00 – 20:00</strong><br>Sábados y domingos cerrado</span>
+              <span class="contact-copy text-sm leading-6 sm:text-base" data-config-html="horario">Lunes a viernes<br><strong>9:30 – 13:30</strong> y <strong>16:00 – 20:00</strong><br>Sábados y domingos cerrado</span>
             </div>
           </div>
 
           <!-- El mapa de Google solo se carga si el usuario lo pide (Google instala cookies propias) -->
-          <div id="map-container" class="overflow-hidden rounded-[24px] border border-slate-200 bg-slate-100 shadow-sm"
-               data-map-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3203.0333642337337!2d-4.5353024222942!3d36.6015054788715!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd72fc9adf00f32b%3A0x5ba100d9b97b64e7!2sFisioterapia%20Costa%20del%20Sol!5e0!3m2!1ses!2ses!4v1791539616490!5m2!1ses!2ses">
+          <div id="map-container" class="overflow-hidden rounded-[24px] border border-slate-200 bg-slate-100 shadow-sm">
             <div class="map-placeholder flex h-[300px] w-full flex-col items-center justify-center gap-4 px-6 text-center sm:h-[360px]">
               <span class="inline-flex h-14 w-14 items-center justify-center rounded-full bg-brand-50 text-brand-700">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-7 w-7"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
               </span>
               <p class="max-w-xs text-sm leading-6 text-slate-600">Al cargar el mapa, Google puede instalar sus propias cookies.</p>
               <button type="button" id="load-map" class="inline-flex items-center justify-center rounded-full bg-brand-600 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-700">Ver mapa</button>
-              <a href="https://maps.google.com/?cid=6602559463821632743" target="_blank" rel="noopener" class="text-sm font-medium text-brand-700 underline underline-offset-4">Abrir en Google Maps</a>
+              <a href="https://maps.google.com/?cid=6602559463821632743" data-config-href="mapa.ficha" target="_blank" rel="noopener" class="text-sm font-medium text-brand-700 underline underline-offset-4">Abrir en Google Maps</a>
             </div>
           </div>
         </div>
@@ -381,6 +413,7 @@
     <button type="button" id="cookie-accept" class="inline-flex items-center justify-center rounded-full bg-brand-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-brand-700">Entendido</button>
   </div>
 
+  <script src="js/config.js"></script>
   <script src="js/script.js"></script>
 </body>
 </html>
