@@ -7,9 +7,9 @@
   <title>Fisioterapia Costa del Sol</title>
   <meta name="description" content="Clínica de fisioterapia en Málaga con atención personalizada, rehabilitación y soluciones para accidentes de tráfico.">
   <link rel="icon" href="img/favicon.ico" type="image/png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" href="fonts/inter-latin-variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/sora-latin-variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="vendor/bootstrap-5.3.3.min.css">
   <script src="vendor/tailwind-3.4.17.js"></script>
   <script>
@@ -271,14 +271,17 @@
             </div>
           </div>
 
-          <div class="overflow-hidden rounded-[24px] border border-slate-200 bg-slate-100 shadow-sm">
-            <iframe
-              title="Ubicación de la clínica en el mapa"
-              src="https://www.google.com/maps?q=Avd.+Salvador+Vicente,+Conjunto+Parquemiel,+6,+Arroyo+de+la+Miel,+Benalm%C3%A1dena,+29631+M%C3%A1laga&output=embed"
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              class="h-[300px] w-full border-0 sm:h-[360px]">
-            </iframe>
+          <!-- El mapa de Google solo se carga si el usuario lo pide (Google instala cookies propias) -->
+          <div id="map-container" class="overflow-hidden rounded-[24px] border border-slate-200 bg-slate-100 shadow-sm"
+               data-map-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3203.0333642337337!2d-4.5353024222942!3d36.6015054788715!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd72fc9adf00f32b%3A0x5ba100d9b97b64e7!2sFisioterapia%20Costa%20del%20Sol!5e0!3m2!1ses!2ses!4v1791539616490!5m2!1ses!2ses">
+            <div class="map-placeholder flex h-[300px] w-full flex-col items-center justify-center gap-4 px-6 text-center sm:h-[360px]">
+              <span class="inline-flex h-14 w-14 items-center justify-center rounded-full bg-brand-50 text-brand-700">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-7 w-7"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              </span>
+              <p class="max-w-xs text-sm leading-6 text-slate-600">Al cargar el mapa, Google puede instalar sus propias cookies.</p>
+              <button type="button" id="load-map" class="inline-flex items-center justify-center rounded-full bg-brand-600 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-700">Ver mapa</button>
+              <a href="https://maps.google.com/?cid=6602559463821632743" target="_blank" rel="noopener" class="text-sm font-medium text-brand-700 underline underline-offset-4">Abrir en Google Maps</a>
+            </div>
           </div>
         </div>
       </div>
@@ -366,7 +369,7 @@
   <!-- COOKIE BANNER -->
   <!-- ========================================================= -->
   <div class="cookie-banner" id="cookie-banner" hidden>
-    <p class="m-0 flex-1 text-sm leading-6 text-slate-600">🍪 Esta web no utiliza cookies propias ni de terceros con fines de análisis o publicidad. Solo guardamos la preferencia de cierre de este aviso.</p>
+    <p class="m-0 flex-1 text-sm leading-6 text-slate-600">🍪 Esta web no utiliza cookies propias ni de terceros con fines de análisis o publicidad. Solo guardamos en tu navegador tus preferencias de visualización (tema y cierre de este aviso). El mapa de Google solo se carga si lo solicitas.</p>
     <button type="button" id="cookie-accept" class="inline-flex items-center justify-center rounded-full bg-brand-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-brand-700">Entendido</button>
   </div>
 

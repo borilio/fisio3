@@ -113,6 +113,12 @@ iframe {
   border: 0;
 }
 
+.map-placeholder {
+  background:
+    radial-gradient(circle at 20% 25%, rgba(31, 111, 100, 0.10), transparent 45%),
+    radial-gradient(circle at 80% 75%, rgba(224, 142, 62, 0.10), transparent 45%);
+}
+
 .legal-list {
   list-style: none;
   padding-left: 1rem;

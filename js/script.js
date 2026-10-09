@@ -150,6 +150,24 @@
   }
 
   /* -----------------------------------------------------
+     Mapa de Google: se carga solo al pulsar "Ver mapa"
+     ----------------------------------------------------- */
+  const mapContainer = document.getElementById("map-container");
+  const loadMap = document.getElementById("load-map");
+
+  if (mapContainer && loadMap) {
+    loadMap.addEventListener("click", () => {
+      const iframe = document.createElement("iframe");
+      iframe.title = "Ubicación de la clínica en el mapa";
+      iframe.src = mapContainer.dataset.mapSrc;
+      iframe.referrerPolicy = "strict-origin-when-cross-origin";
+      iframe.allowFullscreen = true;
+      iframe.className = "h-[300px] w-full border-0 sm:h-[360px]";
+      mapContainer.replaceChildren(iframe);
+    });
+  }
+
+  /* -----------------------------------------------------
      Año en el footer
      ----------------------------------------------------- */
   const yearEl = document.getElementById("year");
