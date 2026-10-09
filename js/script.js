@@ -3,8 +3,9 @@
 
   /* -----------------------------------------------------
      Modo oscuro / claro
-     - Al inicio usa la preferencia del sistema, salvo que el usuario
-       haya elegido un tema manualmente antes.
+     - El tema inicial ya lo aplica el script del <head> (evita parpadeo).
+     - Sin elección manual, se sigue siempre la preferencia del sistema.
+     - Solo se guarda el tema cuando el usuario pulsa el botón.
      ----------------------------------------------------- */
   const root = document.documentElement;
   const themeToggle = document.getElementById("theme-toggle");
@@ -21,12 +22,6 @@
         dark ? "Cambiar a modo claro" : "Cambiar a modo oscuro"
       );
       themeToggle.title = dark ? "Cambiar a modo claro" : "Cambiar a modo oscuro";
-    }
-
-    try {
-      localStorage.setItem(THEME_KEY, dark ? "dark" : "light");
-    } catch (err) {
-      /* noop */
     }
   }
 
@@ -53,6 +48,11 @@
       manualOverride = true;
       const isDark = root.getAttribute("data-theme") === "dark";
       applyTheme(!isDark);
+      try {
+        localStorage.setItem(THEME_KEY, isDark ? "light" : "dark");
+      } catch (err) {
+        /* noop */
+      }
     });
   }
 

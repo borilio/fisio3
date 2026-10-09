@@ -7,6 +7,14 @@
   <title>Fisioterapia Costa del Sol</title>
   <meta name="description" content="Clínica de fisioterapia en Málaga con atención personalizada, rehabilitación y soluciones para accidentes de tráfico.">
   <link rel="icon" href="img/favicon.ico" type="image/png">
+  <!-- Aplica el tema antes de pintar la página para evitar el parpadeo en modo oscuro -->
+  <script>
+    try {
+      var t = localStorage.getItem("fcds_theme");
+      if (t !== "dark" && t !== "light") t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  </script>
   <link rel="preload" href="fonts/inter-latin-variable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/sora-latin-variable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/fonts.css">
