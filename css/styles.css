@@ -177,27 +177,61 @@ iframe {
   font-family: "Sora", system-ui, sans-serif;
 }
 
-#inicio {
+/* Portada con vídeo de fondo.
+   La imagen de fondo de .hero se ve si el vídeo no carga
+   o si el usuario tiene activado "reducir movimiento". */
+.hero {
   position: relative;
   overflow: hidden;
+  background: #123f39 url("../img/fondos/cuello.webp") center / cover no-repeat;
 }
 
-.hero-visual {
-  position: relative;
+.hero__video {
+  position: absolute;
+  inset: 0;
   width: 100%;
-  min-height: 320px;
-  border-radius: 28px;
-  background-color: #dfeae7;
-  background-image: url("../img/instalaciones/entrada.webp");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  box-shadow: 0 22px 30px -18px rgba(15, 23, 42, 0.28);
+  height: 100%;
+  object-fit: cover;
 }
 
-@media (min-width: 768px) {
-  .hero-visual {
-    min-height: 420px;
+/* Capa oscura para que el texto se lea bien sobre el vídeo */
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(18, 63, 57, 0.72) 0%, rgba(15, 23, 42, 0.68) 100%);
+}
+
+/* Difuminado inferior: el vídeo se funde con el fondo de la página */
+.hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 7rem;
+  background: linear-gradient(180deg, transparent 0%, var(--bg) 100%);
+  pointer-events: none;
+}
+
+/* Botón "Ver tratamientos" sobre el vídeo (colores propios para no depender
+   de Tailwind/Bootstrap, que chocan en el color de los enlaces) */
+.hero .hero-btn-secondary {
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.hero .hero-btn-secondary:hover,
+.hero .hero-btn-secondary:focus-visible {
+  border-color: #ffffff;
+  background: #ffffff;
+  color: #175a50;
+  transform: translateY(-2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__video {
+    display: none;
   }
 }
 
